@@ -21,10 +21,10 @@ const toggleMenu = () => {
 
       <nav class="nav" :class="{ 'is-open': isMenuOpen }">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-actions">
              <button class="btn btn-primary">Get Started</button>
@@ -45,7 +45,7 @@ const toggleMenu = () => {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(10, 10, 10, 0.8);
+  background-color: #262626;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: var(--spacing-md) 0;

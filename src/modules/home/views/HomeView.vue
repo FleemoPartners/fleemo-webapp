@@ -5,8 +5,12 @@ import FoundersSection from '../components/FoundersSection.vue';
 
 <template>
   <div class="home-view">
-    <HeroSection />
-    <FoundersSection />
+    <section id="home">
+      <HeroSection />
+    </section>
+    <section id="team">
+      <FoundersSection />
+    </section>
   </div>
 </template>
 
