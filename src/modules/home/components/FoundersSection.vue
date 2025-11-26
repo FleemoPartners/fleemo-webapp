@@ -29,7 +29,7 @@ const founders = [
   },
   {
     id: 3,
-    name: 'Andre Valdiviezo',
+    name: 'Andre Valdivieso',
     role: 'Socio Estrategico',
     image: 'https://i.postimg.cc/wM127kW6/1749573185395.jpg',
     bio: 'Estudiante de administración y marketing, apasionado por el marketing digital y el crecimiento en redes sociales.',
