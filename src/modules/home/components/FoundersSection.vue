@@ -77,8 +77,8 @@ const getCardStyle = (index) => {
   <section class="founders">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Meet the <span class="text-primary">Founders</span></h2>
-        <p class="section-subtitle">The team behind the success.</p>
+        <h2 class="section-title">Conoce a nuestro <span class="text-primary">Equipo</span></h2>
+        <p class="section-subtitle">El equipo detrás del éxito.</p>
       </div>
       
       <div class="carousel-container">

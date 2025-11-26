@@ -3,13 +3,13 @@
     <div class="container hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
-          Turn Your iGaming Affiliate Traffic Into <span class="text-primary">Profitable Players</span>
+          Haz crecer tus redes y convierte seguidores en  <span class="text-primary">Clientes Reales</span>
         </h1>
         <p class="hero-subtitle">
-          We drive casino traffic and betting influencer campaigns that acquire high-value FTDs for operators. Join our proven iGaming affiliate marketing network.
+          Impulsamos a pequeñas empresas, emprendedores e influencers emergentes a escalar en redes sociales, aumentar su visibilidad y convertir su contenido en ventas reales.
         </p>
         <div class="hero-actions">
-          <button class="btn btn-primary">Get Your FREE Marketing Consultation</button>
+          <button class="btn btn-primary">Get Your FREE Growth Strategy</button>
           <button class="btn btn-outline">Watch Us in Action (2 min)</button>
         </div>
         
