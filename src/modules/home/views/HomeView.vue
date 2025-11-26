@@ -1,27 +1,24 @@
 <script setup>
 import HeroSection from '../components/HeroSection.vue';
 import FoundersSection from '../components/FoundersSection.vue';
+import ContactSection from '../components/ContactSection.vue';
+import ServicesSection from '../components/ServicesSection.vue';
 </script>
 
 <template>
   <div class="home-view">
-    
     <section id="home">
       <HeroSection />
     </section>
-    
-    <section id="services">
-      <!--aca pones el componente de servicios-->
-    </section>
-
     <section id="team">
       <FoundersSection />
     </section>
-
-    <section id="contact">
-      <!--aca pones el componente de contacto-->
+    <section id="services">
+      <ServicesSection />
     </section>
-
+    <section id="contact">
+      <ContactSection />
+    </section>
   </div>
 </template>
 
