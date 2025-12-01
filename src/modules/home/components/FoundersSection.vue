@@ -224,14 +224,14 @@ const getCardStyle = (index) => {
 
 <style scoped>
 .founders {
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: #0d0d0d;
   overflow: hidden;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .section-title {
@@ -250,15 +250,15 @@ const getCardStyle = (index) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
-  min-height: 550px;
+  padding: 4rem 0;
+  min-height: 525px;
 }
 
 .carousel-track {
   position: relative;
   width: 100%;
   max-width: 600px;
-  height: 500px;
+  height: 475px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +268,7 @@ const getCardStyle = (index) => {
 .founder-card-wrapper {
   position: absolute;
   width: 100%;
-  max-width: 500px;
+  max-width: 475px;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
@@ -280,8 +280,8 @@ const getCardStyle = (index) => {
 .founder-card {
   background: linear-gradient(135deg, rgba(80, 77, 82, 0.15) 0%, rgba(208, 207, 209, 0.15) 100%);
   border: 1px solid rgba(83, 78, 88, 0.3);
-  padding: 2.5rem 2rem;
-  min-height: 540px;
+  padding: 2.25rem 1.75rem;
+  min-height: 510px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -295,8 +295,8 @@ const getCardStyle = (index) => {
 }
 
 .founder-image-wrapper {
-  width: 300;
-  height: 320px;
+  width: 290px;
+  height: 300px;
   margin: 0 auto 1.5rem;
   border-radius: var(--radius-md);
   overflow: hidden;
