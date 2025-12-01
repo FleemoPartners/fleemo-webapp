@@ -71,7 +71,8 @@ const services = [
 <style scoped>
 .services-section {
   padding: var(--spacing-xxl) 0;
-  background-color: var(--color-background);
+  background: radial-gradient(circle at bottom right, #1a1a1a 0%, var(--color-background) 100%);
+  position: relative;
 }
 
 .header {
@@ -84,7 +85,7 @@ const services = [
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-text-muted);
+  color: var(--color-primary);
   display: block;
   margin-bottom: var(--spacing-sm);
 }
@@ -115,8 +116,8 @@ const services = [
 }
 
 .service-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--glass-bg);
+  border: var(--glass-border);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   transition: all var(--transition-normal);
@@ -126,24 +127,44 @@ const services = [
   align-items: flex-start;
   gap: var(--spacing-md);
   min-height: 200px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
 }
 
 .service-card:hover {
-  background-color: var(--color-primary);
   transform: translateY(-5px);
-  border-color: var(--color-primary);
+  border-color: rgba(0, 255, 157, 0.3);
+  box-shadow: var(--shadow-glow);
+}
+
+.service-card:hover::before {
+  opacity: 1;
 }
 
 .icon-wrapper {
   width: 48px;
   height: 48px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-text);
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .icon-wrapper :deep(svg) {
@@ -167,22 +188,19 @@ const services = [
 
 /* Hover States */
 .service-card:hover .service-title {
-  color: var(--color-background);
-}
-
-.service-card:hover .service-subtitle {
-  color: rgba(10, 10, 10, 0.7);
+  color: var(--color-primary);
 }
 
 .service-card:hover .icon-wrapper {
-  color: var(--color-background);
-  background-color: rgba(10, 10, 10, 0.1);
+  color: var(--color-primary);
+  background: rgba(0, 255, 157, 0.1);
+  border-color: var(--color-primary);
 }
 
 /* More Card Specifics */
 .more-card {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--gradient-primary);
+  border: none;
   justify-content: center;
   align-items: center;
 }
@@ -193,27 +211,28 @@ const services = [
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-xs);
+  z-index: 1;
 }
 
 .more-card .plus-icon {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color-background);
+  color: #000;
 }
 
 .more-card .more-text {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-background);
+  color: #000;
 }
 
 .more-card .more-subtitle {
   font-size: 0.875rem;
-  color: rgba(10, 10, 10, 0.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .more-card:hover {
-  background-color: var(--color-primary-hover);
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 255, 157, 0.4);
 }
 </style>

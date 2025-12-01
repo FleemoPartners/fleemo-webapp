@@ -110,15 +110,32 @@ const handleSubmit = () => {
 
 <style scoped>
 .contact-section {
-  background-color: #0d0d0d; /* Mismo fondo que FoundersSection */
+  background-color: #0d0d0d;
   color: #ffffff;
-  padding: 80px 20px;
+  padding: 70px 20px;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: var(--gradient-glow);
+  filter: blur(100px);
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .header {
@@ -128,23 +145,29 @@ const handleSubmit = () => {
 
 .badge {
   display: inline-block;
-  background: rgba(0, 255, 157, 0.1); /* Verde primario con transparencia */
+  background: rgba(0, 255, 157, 0.1);
   color: var(--color-primary);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
   margin-bottom: 20px;
   border: 1px solid rgba(0, 255, 157, 0.2);
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.1);
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-weight: 700;
   margin-bottom: 16px;
 }
 
 .highlight {
-  color: var(--color-primary); /* Verde primario */
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.3));
 }
 
 .subtitle {
@@ -169,16 +192,18 @@ h2 {
 }
 
 .info-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: var(--glass-border);
   border-radius: 16px;
   padding: 32px;
   transition: all var(--transition-fast);
+  backdrop-filter: blur(10px);
 }
 
 .info-card:hover {
-  border-color: rgba(0, 255, 157, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 255, 157, 0.1);
+  border-color: rgba(0, 255, 157, 0.3);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
 }
 
 .info-card h3 {
@@ -203,8 +228,9 @@ h2 {
 }
 
 .icon {
-  color: var(--color-primary); /* Verde primario */
+  color: var(--color-primary);
   font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
 }
 
 .info-card.small p {
@@ -215,12 +241,13 @@ h2 {
 
 /* Form Column */
 .form-card {
-  background: linear-gradient(135deg, rgba(80, 77, 82, 0.1) 0%, rgba(208, 207, 209, 0.1) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
+  border: var(--glass-border);
   border-radius: 16px;
-  padding: 40px;
+  padding: 35px;
   backdrop-filter: blur(10px);
   transition: all var(--transition-fast);
+  box-shadow: var(--shadow-card);
 }
 
 .form-card:hover {
@@ -238,6 +265,7 @@ h2 {
 .calendar-icon {
   font-size: 1.5rem;
   color: var(--color-primary);
+  filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.4));
 }
 
 .form-desc {
@@ -289,7 +317,7 @@ input::placeholder, textarea::placeholder {
 
 .submit-btn {
   width: 100%;
-  background: var(--color-primary);
+  background: var(--gradient-primary);
   color: #0d0d0d;
   border: none;
   border-radius: 8px;
@@ -299,12 +327,12 @@ input::placeholder, textarea::placeholder {
   cursor: pointer;
   transition: all var(--transition-fast);
   margin-top: 12px;
+  box-shadow: 0 4px 15px rgba(0, 255, 157, 0.3);
 }
 
 .submit-btn:hover {
-  background: #0dff9d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 255, 157, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 255, 157, 0.4);
 }
 
 .submit-btn:active {
