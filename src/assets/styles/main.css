@@ -1,9 +1,7 @@
-
-
 /* Global Styles & Variables */
 :root {
   /* Colors */
-  --color-primary: #00ff9d; /* Fleemo Green - Adjusted to match logo */
+  --color-primary: #00ff9d; /* Fleemo Green */
   --color-primary-hover: #00cc7d;
   --color-background: #0a0a0a;
   --color-surface: #1a1a1a;
@@ -19,9 +17,9 @@
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 4rem;
-  --spacing-xxl: 8rem;
+  --spacing-lg: 1.75rem;
+  --spacing-xl: 3.5rem;
+  --spacing-xxl: 6.5rem;
 
   /* Border Radius */
   --radius-sm: 0.25rem;
@@ -32,6 +30,33 @@
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
+  
+  /* Visual Effects */
+  --gradient-primary: linear-gradient(180deg, #00ff9d 0%, #00cc7d 100%);
+  --gradient-glow: radial-gradient(circle at center, rgba(0, 255, 157, 0.25) 0%, transparent 70%);
+  --gradient-surface: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --shadow-glow: 0 0 20px rgba(0, 255, 157, 0.3);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --glass-bg: rgba(20, 20, 20, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 5px rgba(0, 255, 157, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 157, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(0, 255, 157, 0.2); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Reset & Base */
@@ -79,7 +104,13 @@ img {
 }
 
 .text-primary {
-  color: var(--color-primary);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-primary); /* Fallback */
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 255, 157, 0.2));
 }
 
 .btn {
@@ -120,4 +151,3 @@ img {
   width: 100%;
   font-weight: normal;
 }
-
