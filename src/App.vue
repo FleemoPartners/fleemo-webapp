@@ -1,5 +1,6 @@
 <script setup>
 import TheHeader from './shared/components/layout/TheHeader.vue';
+import TheFooter from './shared/components/layout/TheFooter.vue';
 import HomeView from './modules/home/views/HomeView.vue';
 </script>
 
@@ -8,6 +9,7 @@ import HomeView from './modules/home/views/HomeView.vue';
   <main>
     <HomeView />
   </main>
+  <TheFooter />
 </template>
 
 <style>
