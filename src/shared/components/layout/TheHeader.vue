@@ -45,10 +45,22 @@ const toggleMenu = () => {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #262626;
-  backdrop-filter: blur(10px);
+  background-color: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: var(--spacing-md) 0;
+  transition: all var(--transition-normal);
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 157, 0.3) 50%, transparent 100%);
+  opacity: 0.5;
 }
 
 .header-container {
@@ -65,6 +77,11 @@ const toggleMenu = () => {
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: -0.02em;
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+  transform: scale(1.02);
 }
 
 .nav {
@@ -100,16 +117,36 @@ const toggleMenu = () => {
 .logo-highlight {
   color: var(--color-primary);
   font-weight: 300;
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
 }
 
 .nav-link {
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-text-muted);
+  position: relative;
+  padding: 4px 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--transition-fast);
+  box-shadow: 0 0 5px rgba(0, 255, 157, 0.5);
 }
 
 .nav-link:hover {
-  color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .hamburger {
