@@ -60,7 +60,7 @@ const scrollToTop = () => {
       <div class="footer-bottom">
         <p class="copyright">© 2025 Fleemo Partners. Todos los derechos reservados.</p>
         <div class="footer-bottom-right">
-           <p class="developed-by">Developed by <a class="text-primary" href="https://fleemo.com">FleemoSoftware</a></p>
+           <p class="developed-by">Developed by <a class="text-primary" href="https://fleemo-software-web.vercel.app/">FleemoSoftware</a></p>
            <p class="made-with">Hecho con <span class="heart">❤</span> usando Vue.js</p>
         </div>
       </div>
