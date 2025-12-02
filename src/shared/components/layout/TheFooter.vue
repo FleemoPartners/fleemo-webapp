@@ -34,7 +34,7 @@ const scrollToTop = () => {
           <h3 class="column-title">CONTACTO</h3>
           <ul class="footer-links">
             <li><a href="mailto:fleemocontacto@gmail.com">fleemocontacto@gmail.com</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/company/fleemopartners/posts/?feedView=all">LinkedIn</a></li>
           </ul>
         </div>
       </div>
