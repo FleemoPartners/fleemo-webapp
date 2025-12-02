@@ -36,7 +36,7 @@
 <style scoped>
 .hero {
   position: relative;
-  padding: 130px 0 80px;
+  padding: 200px 0 200px;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
