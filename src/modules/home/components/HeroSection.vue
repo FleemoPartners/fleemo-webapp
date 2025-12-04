@@ -43,21 +43,47 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: radial-gradient(circle at top center, #1a1a1a 0%, #0a0a0a 100%);
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(0, 255, 157, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 204, 125, 0.08) 0%, transparent 25%),
+    linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-glow {
   position: absolute;
-  top: -20%;
+  top: -30%;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
-  height: 800px;
-  background: var(--gradient-glow);
-  filter: blur(80px);
-  opacity: 0.4;
+  width: 1200px;
+  height: 1000px;
+  background: radial-gradient(circle at center, rgba(0, 255, 157, 0.15) 0%, rgba(0, 255, 157, 0.05) 30%, transparent 70%);
+  filter: blur(100px);
+  opacity: 0.6;
   pointer-events: none;
   z-index: 1;
+  animation: pulse-glow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.4; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0.7; transform: translateX(-50%) scale(1.1); }
 }
 
 .hero-container {

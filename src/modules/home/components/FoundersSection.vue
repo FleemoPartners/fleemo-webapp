@@ -225,8 +225,21 @@ const getCardStyle = (index) => {
 <style scoped>
 .founders {
   padding: 80px 0;
-  background-color: #0d0d0d;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 1) 0%, rgba(10, 10, 10, 1) 100%),
+    linear-gradient(0deg, #0a0a0a 0%, #141414 100%);
   overflow: hidden;
+  position: relative;
+}
+
+.founders::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .section-header {
@@ -268,7 +281,7 @@ const getCardStyle = (index) => {
 .founder-card-wrapper {
   position: absolute;
   width: 100%;
-  max-width: 475px;
+  max-width: 400px;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
@@ -295,8 +308,8 @@ const getCardStyle = (index) => {
 }
 
 .founder-image-wrapper {
-  width: 290px;
-  height: 300px;
+  width: 260px;
+  height: 270px;
   margin: 0 auto 1.5rem;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -334,7 +347,7 @@ const getCardStyle = (index) => {
   color: var(--color-text-muted);
   font-size: 1.1rem;
   line-height: 1.7;
-  max-width: 450px;
+  max-width: 100%;
   margin: 0 auto 1.5rem;
 }
 

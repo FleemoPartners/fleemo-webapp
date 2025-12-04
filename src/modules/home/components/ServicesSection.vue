@@ -71,8 +71,25 @@ const services = [
 <style scoped>
 .services-section {
   padding: var(--spacing-xxl) 0;
-  background: radial-gradient(circle at bottom right, #1a1a1a 0%, var(--color-background) 100%);
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(0, 255, 157, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(0, 100, 255, 0.03) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
   position: relative;
+  overflow: hidden;
+}
+
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .header {

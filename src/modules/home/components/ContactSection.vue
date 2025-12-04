@@ -110,7 +110,9 @@ const handleSubmit = () => {
 
 <style scoped>
 .contact-section {
-  background-color: #0d0d0d;
+  background: 
+    radial-gradient(circle at 50% 100%, rgba(0, 255, 157, 0.05) 0%, transparent 50%),
+    linear-gradient(180deg, #111111 0%, #050505 100%);
   color: #ffffff;
   padding: 70px 20px;
   width: 100%;
