@@ -1,4 +1,6 @@
 <script setup>
+import fleemoLogo from '@/assets/fleemo.svg';
+
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -13,7 +15,10 @@ const scrollToTop = () => {
       <div class="footer-top">
         <!-- Brand Section -->
         <div class="footer-column brand-column">
-          <h2 class="brand-name">Fleemo Partners</h2>
+          <div class="brand-header">
+            <img :src="fleemoLogo" alt="Fleemo Partners" class="brand-icon" />
+            <span class="logo-text"><span class="text-gradient">FleemoPartners</span></span>
+          </div>
           <p class="brand-subtitle">Equipo de asesoramiento de redes</p>
         </div>
 
@@ -108,16 +113,29 @@ const scrollToTop = () => {
   flex: 2; /* Take more space */
 }
 
-.brand-name {
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-xs);
   color: var(--color-text);
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  margin-bottom: 0;
 }
 
 .brand-subtitle {

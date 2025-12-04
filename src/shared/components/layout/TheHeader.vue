@@ -1,33 +1,63 @@
 <script setup>
-import { ref } from 'vue';
-import logo from '@/assets/logo.png';
+import { ref, onMounted, onUnmounted } from 'vue';
+import fleemoLogo from '@/assets/fleemo.svg';
 
 const isMenuOpen = ref(false);
+const isScrolled = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
+
+const checkScroll = () => {
+  isScrolled.value = window.scrollY > 50;
+};
+
+const scrollToSection = (id) => {
+  isMenuOpen.value = false;
+  const element = document.querySelector(id);
+  if (element) {
+    const offset = 80;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', checkScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', checkScroll);
+});
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header-scrolled': isScrolled }">
     <div class="container header-container">
-      <a href="#" class="logo">
+      <a href="#" @click.prevent="scrollToSection('#home')" class="logo">
         <span class="logo-icon">
-             <img :src="logo" alt="Fleemo Partners Logo" class="logo-img" />
+             <img :src="fleemoLogo" alt="Fleemo Partners" class="logo-img" />
         </span>
-        <span class="logo-text">FLEEMO <span class="logo-highlight">PARTNERS</span></span>
+        <span>Fleemo<span class="text-gradient">Partners  </span></span>
       </a>
 
       <nav class="nav" :class="{ 'is-open': isMenuOpen }">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
-          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="#home" @click.prevent="scrollToSection('#home')" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#team" @click.prevent="scrollToSection('#team')" class="nav-link">Team</a></li>
+          <li class="nav-item"><a href="#services" @click.prevent="scrollToSection('#services')" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#contact" @click.prevent="scrollToSection('#contact')" class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-actions">
-             <button class="btn btn-primary">Get Started</button>
+             <button class="btn btn-primary" @click="scrollToSection('#contact')">Get Started</button>
         </div>
       </nav>
 
@@ -45,14 +75,20 @@ const toggleMenu = () => {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: var(--spacing-md) 0;
-  transition: all var(--transition-normal);
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  background: transparent;
+  border-bottom: 1px solid transparent;
 }
 
-.header::after {
+.header-scrolled {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px 0;
+}
+
+.header-scrolled::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -78,6 +114,8 @@ const toggleMenu = () => {
   font-size: 1.5rem;
   letter-spacing: -0.02em;
   transition: transform var(--transition-fast);
+  text-decoration: none;
+  color: var(--color-text);
 }
 
 .logo:hover {
@@ -115,9 +153,12 @@ const toggleMenu = () => {
 }
 
 .logo-highlight {
-  color: var(--color-primary);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 300;
-  text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+  filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.3));
 }
 
 .nav-link {
@@ -127,6 +168,7 @@ const toggleMenu = () => {
   position: relative;
   padding: 4px 0;
   transition: color var(--transition-fast);
+  text-decoration: none;
 }
 
 .nav-link::after {

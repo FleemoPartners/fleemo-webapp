@@ -103,6 +103,14 @@ img {
   padding: 0 var(--spacing-lg);
 }
 
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
 .text-primary {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
